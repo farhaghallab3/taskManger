@@ -30,7 +30,7 @@ jobs:
           npm test
 
       # Install dependencies, lint, and test the frontend
-      - name: Install, Lint, and Test Frontend
+      - name: Install, and Test Frontend
         run: |
           npm ci
           npm run build
