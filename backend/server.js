@@ -5,7 +5,8 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5001;
+
 
 // Middleware
 app.use(bodyParser.json());
@@ -139,8 +140,16 @@ app.delete("/api/tasks/:id", (req, res) => {
 module.exports = app;
 
 // Start the server only if this file is run directly
+const findFreePort = require("find-free-port");
+
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  findFreePort(5000, (err, freePort) => {
+    if (err) {
+      console.error("Error finding free port:", err);
+      process.exit(1);
+    }
+    app.listen(freePort, () => {
+      console.log(`Server running on http://localhost:${freePort}`);
+    });
   });
 }
