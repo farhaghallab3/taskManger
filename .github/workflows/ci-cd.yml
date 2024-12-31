@@ -31,7 +31,7 @@ jobs:
 
       # Install dependencies, lint, and test the frontend
       - name: Install, Lint, and Test Frontend
-        working-directory: ./frontend
+        working-directory: ./TASK_REACT-FARHA
         run: |
           npm ci
           npm run lint
