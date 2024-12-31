@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "email": "m@gmail.com",
+    "password": "12345678",
+    "username": "mohamed"
+  },
+  {
+    "id": 2,
+    "email": "farha@gmail.com",
+    "password": "zxc123",
+    "username": "farhaghallab"
+  },
+  {
+    "id": 3,
+    "email": "newuser@gmail.com",
+    "password": "123456",
+    "username": "newuser"
+  },
+  {
+    "id": 4,
+    "email": "noor@gmail.com",
+    "password": "123456",
+    "username": "noor"
+  },
+  {
+    "id": 5,
+    "email": "aya@gmail.com",
+    "password": "1234",
+    "username": "aya"
+  },
+  {
+    "id": 6,
+    "email": "farhagalab74@gmail.com",
+    "password": "12345678",
+    "username": "farha_g1"
+  }
+]
