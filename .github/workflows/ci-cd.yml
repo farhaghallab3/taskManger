@@ -1,4 +1,3 @@
-
 name: CI/CD Pipeline
 
 on:
@@ -9,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build, Lint, and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -30,12 +29,20 @@ jobs:
           npm ci
           npm test
 
-      # Install dependencies and test the frontend
-      - name: Install and Test Frontend
+      # Install dependencies, lint, and test the frontend
+      - name: Install, Lint, and Test Frontend
         working-directory: ./frontend
         run: |
           npm ci
           npm run lint
           npm run build
 
-  
+  deploy:
+    name: Deploy Application
+    runs-on: ubuntu-latest
+    needs: build # Wait for the build job to finish
+
+    steps:
+      # Deploy the application
+      - name: Deploy to Hosting Platform
+        run: echo "Deployment step goes here"
